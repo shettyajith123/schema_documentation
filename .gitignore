@@ -22,7 +22,7 @@ venv/
 .vscode/
 
 # Generated docs
-docs/**/*.md
+# (Intentionally tracked for this repo)
 
 # Logs (if any end up outside docs)
 *.log
