@@ -1,27 +1,31 @@
-# Schema Documenter (SQL Server → Markdown)  
-AI-powered database documentation generator using Python + LangChain + OpenAI.
+# Schema Documenter (SQL Server → Markdown)
 
-This project connects to a SQL Server database, extracts table metadata (columns, keys, relationships, indexes, row counts, and a small sample), and then uses an LLM to generate clean Markdown documentation per table — plus index pages for easy navigation.
+Reduced schema onboarding from hours of manual effort to minutes by automating SQL Server documentation generation with LLMs.
 
-## Why I built this
+This tool extracts table metadata (columns, keys, relationships, indexes, row counts, and small samples) and enriches it with an LLM to produce clean, navigable Markdown docs.
 
-Data teams often lose time on “tribal knowledge” about schemas: what each table means, which columns are keys, and how tables relate. This tool automates that documentation end-to-end and makes it repeatable.
+## Demo
 
-It also demonstrates skills across:
-- **Data engineering automation** (metadata extraction, repeatable CLI workflows)
-- **AI orchestration** (LLM prompting, chunking, retries, cost estimation)
-- **Production-minded Python** (logging, progress reporting, safe secret handling)
+![Demo: generated Markdown output](assets/demo-schema-doc.svg)
 
-## Tech stack
+Browse the generated docs in this repo:
+- `docs/README.md` (master index)
+- `docs/practice/README.md` (table index)
 
-- **Language/runtime**: Python 3.10+
-- **Database**: Microsoft SQL Server
-- **Connectivity**: `pyodbc` + `SQLAlchemy` (ODBC Driver 17/18)
-- **LLM orchestration**: `langchain` + `langchain-openai`
-- **LLM provider**: OpenAI (via `OPENAI_API_KEY`)
-- **CLI + ops**: `argparse`, `tqdm`, Python `logging`
-- **Config/secrets**: `config.yaml` + `.env` (loaded via `python-dotenv`; `.env` is gitignored)
-- **Outputs**: Markdown documentation under `docs/`
+## Why this matters for data engineering
+
+The core pattern here is directly applicable to modern DE workflows:
+
+**Metadata extraction → LLM enrichment → structured output**
+
+That same pattern shows up in:
+- **Data catalog automation** (auto-descriptions, ownership hints, business context)
+- **Data observability** (documenting expectations, anomalies, freshness/SLO notes)
+- **Lineage documentation** (explaining relationships and join paths)
+
+## Resume / LinkedIn one-liner
+
+Built an AI-powered schema documentation tool using Python, LangChain, and OpenAI that auto-generates Markdown docs from SQL Server metadata — eliminating manual documentation effort for data teams.
 
 ## What it generates
 
@@ -106,6 +110,17 @@ The pipeline is intentionally modular:
    - `src/markdown_writer.py` writes per-table docs and index pages.
 4. **Orchestrate**
    - `src/main.py` is the CLI entrypoint: config + env loading, progress bars, logging, and per-table error isolation.
+
+## Tech stack
+
+- **Language/runtime**: Python 3.10+
+- **Database**: Microsoft SQL Server
+- **Connectivity**: `pyodbc` + `SQLAlchemy` (ODBC Driver 17/18)
+- **LLM orchestration**: `langchain` + `langchain-openai`
+- **LLM provider**: OpenAI (via `OPENAI_API_KEY`)
+- **CLI + ops**: `argparse`, `tqdm`, Python `logging`
+- **Config/secrets**: `config.yaml` + `.env` (loaded via `python-dotenv`; `.env` is gitignored)
+- **Outputs**: Markdown documentation under `docs/`
 
 ## Configuration
 
