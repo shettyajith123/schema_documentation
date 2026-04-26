@@ -12,6 +12,17 @@ It also demonstrates skills across:
 - **AI orchestration** (LLM prompting, chunking, retries, cost estimation)
 - **Production-minded Python** (logging, progress reporting, safe secret handling)
 
+## Tech stack
+
+- **Language/runtime**: Python 3.10+
+- **Database**: Microsoft SQL Server
+- **Connectivity**: `pyodbc` + `SQLAlchemy` (ODBC Driver 17/18)
+- **LLM orchestration**: `langchain` + `langchain-openai`
+- **LLM provider**: OpenAI (via `OPENAI_API_KEY`)
+- **CLI + ops**: `argparse`, `tqdm`, Python `logging`
+- **Config/secrets**: `config.yaml` + `.env` (loaded via `python-dotenv`; `.env` is gitignored)
+- **Outputs**: Markdown documentation under `docs/`
+
 ## What it generates
 
 Output structure:
