@@ -1,0 +1,10 @@
+sql_server:
+  server: localhost
+  driver: ODBC Driver 17 for SQL Server
+
+llm:
+  model: gpt-4o-mini
+  temperature: 0.1
+
+output:
+  base_dir: docs

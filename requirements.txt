@@ -1,0 +1,7 @@
+pyodbc==5.1.0
+SQLAlchemy==2.0.36
+langchain==1.2.15
+langchain-openai==1.2.1
+python-dotenv==1.0.1
+PyYAML==6.0.2
+tqdm==4.66.5

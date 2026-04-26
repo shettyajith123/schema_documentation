@@ -1,0 +1,1 @@
+"""schema-documenter package."""

@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# Env
+.env
+
+# IDE
+.vscode/
+
+# Generated docs
+docs/**/*.md
+
+# Logs (if any end up outside docs)
+*.log
