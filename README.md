@@ -23,7 +23,7 @@ That same pattern shows up in:
 - **Data observability** (documenting expectations, anomalies, freshness/SLO notes)
 - **Lineage documentation** (explaining relationships and join paths)
 
-## Copy-paste one-liner (Resume / LinkedIn)
+## Description
 
 Built an AI-powered schema documentation tool using Python, LangChain, and OpenAI that auto-generates Markdown docs from SQL Server metadata — eliminating manual documentation effort for data teams.
 
